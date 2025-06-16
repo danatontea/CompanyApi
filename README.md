@@ -9,12 +9,20 @@ Swagger documentation
 Database integration
 
 Quick Start
+
  bash# Clone repository
+	
  git clone https://github.com/danatontea/CompanyApi.git
+	
  cd CompanyApi
+	
 
 # Install dependencies
 dotnet restore
+
+Create Database
+
+CREATE DATABASE `companies`
 
 # Update database
 dotnet ef database update
@@ -24,13 +32,22 @@ dotnet run
 API Endpoints
 
 GET /api/Companies - Get all companies
+
 GET /api/Companies/{id} - Get company by ID
+
 GET /api/Companies/by-isin/{isin} - Get company by Isin
+
 POST /api/Companies - Create new company
+
 PUT /api/Companies/{id} - Update company
 
-Authentication
+
+#Authentication
+
 Include API key in request header:
+
 X-API-Key: your-api-key-here
+
 Documentation
+
 Swagger UI available at: http://localhost:5000/swagger

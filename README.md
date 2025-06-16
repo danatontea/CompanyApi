@@ -20,7 +20,7 @@ Quick Start
 # Install dependencies
 dotnet restore
 
-Create Database
+Create Database on mysql server and set the connectionstring in the appsettings.json file.
 
 CREATE DATABASE `companies`
 

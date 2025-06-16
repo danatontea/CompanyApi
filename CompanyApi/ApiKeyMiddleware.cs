@@ -21,8 +21,6 @@
                 await _next(context);
                 return;
             }
-
-            // Verifică dacă header-ul X-Api-Key există
             if (!context.Request.Headers.TryGetValue("X-Api-Key", out var extractedApiKey))
             {
                 context.Response.StatusCode = 401;
@@ -30,7 +28,6 @@
                 return;
             }
 
-            // Verifică dacă API Key-ul este valid
             var validApiKey = _configuration["ApiSettings:ApiKey"];
             if (extractedApiKey != validApiKey)
             {
@@ -39,7 +36,6 @@
                 return;
             }
 
-            // API Key valid - continuă cu request-ul
             await _next(context);
         }
     }
